@@ -53,10 +53,12 @@ public class RabbitReceiver {
 			System.out.println(order);
 		}
 		// 此处也可以带messagid等信息作为唯一标识来确保消息的幂等操作
-		System.out.println("消息唯一标识符:" + heads.get("number"));
 		/**
-		 * 下面的是设置为手动确认消费成功 1.需要在配置文件中开启手动消费 2.下面代码 确认消费的意思是：当下面两行代码走完后，那么此消息就会从服务器中删除。
+		 * 做幂等操作可用redis或者DB来存储唯一标识符，每次消费前
+		 * 先查询是否消费了，如果没有消费就在消费逻辑。
 		 */
+		System.out.println("消息唯一标识符:" + heads.get("number"));
+	
 		long deTag = (Long) heads.get(AmqpHeaders.DELIVERY_TAG);
 		System.out.println(deTag);
 		// 告诉服务器，已经消费成功,
