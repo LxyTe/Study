@@ -55,9 +55,9 @@ public class RpcFramework {
                                     Object[] arguments = (Object[])input.readObject();
                                     //生成一个socket输出流
                                     ObjectOutputStream output = new ObjectOutputStream(socket.getOutputStream());
-                                    try {
+                                    try {                                   	                                                                  	
                                     	//通过反射技术得到hello方法的实现类
-                                        Method method = service.getClass().getMethod(methodName, parameterTypes);
+                                         Method method = service.getClass().getMethod(methodName, parameterTypes);
                                         //通过得到的实现类，然后调用service(com.te.rpc.HelloServiceImpl@4e81cf3)也就是具体的实现方法
                                         //arguments(arguments)就是参数 World0
                                         Object result = method.invoke(service, arguments);
