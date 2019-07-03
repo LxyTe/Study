@@ -7,9 +7,10 @@ public class BookImpl implements BookApi {
 	  return "GO Go Go" +aaa;
 	}
 	
-	public String Te2() {
+	public void Te2() {
 		// TODO Auto-generated method stub
-	  return "222222";
+		System.out.println("22222222222");
+	  //return "222222";
 	}
 
 }

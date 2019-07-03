@@ -8,5 +8,5 @@ package com.te.rpc.proxy;
 public interface BookApi {
    String Te(String  aa);
    
-   String Te2();
+   void Te2();
 }
