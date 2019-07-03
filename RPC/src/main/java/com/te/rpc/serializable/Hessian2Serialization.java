@@ -8,12 +8,9 @@ import java.io.Serializable;
 import com.caucho.hessian.io.Hessian2Input;
 import com.caucho.hessian.io.Hessian2Output;
 
-public class Hessian2Serialization implements Serializable {
+public class Hessian2Serialization implements Serialization {
 
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
 
 	public byte[] serialize(Object data) throws IOException {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
